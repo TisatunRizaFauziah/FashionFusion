@@ -1,0 +1,452 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7CE98D36-2CE9-419E-9977-5D4214FC0AEB}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>FashionFusion</RootNamespace>
+    <AssemblyName>FashionFusion</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Guna.UI2, Version=2.0.4.6, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
+      <HintPath>packages\Guna.UI2.WinForms.2.0.4.6\lib\net472\Guna.UI2.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging.Abstractions, Version=7.0.0.1, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Extensions.Logging.Abstractions.7.0.1\lib\net462\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="MySqlConnector, Version=2.0.0.0, Culture=neutral, PublicKeyToken=d33d3e53aa5f8c92, processorArchitecture=MSIL">
+      <HintPath>packages\MySqlConnector.2.3.1\lib\net471\MySqlConnector.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=7.0.0.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Diagnostics.DiagnosticSource.7.0.2\lib\net462\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Management" />
+    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controller\Admin.cs" />
+    <Compile Include="Controller\Distributor.cs" />
+    <Compile Include="Controller\Kategori.cs" />
+    <Compile Include="Controller\Laporan.cs" />
+    <Compile Include="Controller\Pakaian.cs" />
+    <Compile Include="Controller\Pelanggan.cs" />
+    <Compile Include="Controller\Pembelian.cs" />
+    <Compile Include="Controller\Penjualan.cs" />
+    <Compile Include="Controller\Validasi.cs" />
+    <Compile Include="Controller\Welcome.cs" />
+    <Compile Include="View\FormSignIn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FormSignIn.Designer.cs">
+      <DependentUpon>FormSignIn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Connection.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View\FormAbout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FormAbout.Designer.cs">
+      <DependentUpon>FormAbout.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FormBeranda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FormBeranda.Designer.cs">
+      <DependentUpon>FormBeranda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FormDistributor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FormDistributor.Designer.cs">
+      <DependentUpon>FormDistributor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FormDistributorAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FormDistributorAdd.Designer.cs">
+      <DependentUpon>FormDistributorAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FormDistributorDelete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FormDistributorDelete.Designer.cs">
+      <DependentUpon>FormDistributorDelete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FormDistributorUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FormDistributorUpdate.Designer.cs">
+      <DependentUpon>FormDistributorUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FormKategori.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FormKategori.Designer.cs">
+      <DependentUpon>FormKategori.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FormKategoriAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FormKategoriAdd.Designer.cs">
+      <DependentUpon>FormKategoriAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FormKategoriDelete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FormKategoriDelete.Designer.cs">
+      <DependentUpon>FormKategoriDelete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FormKategoriUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FormKategoriUpdate.Designer.cs">
+      <DependentUpon>FormKategoriUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FormLaporan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FormLaporan.Designer.cs">
+      <DependentUpon>FormLaporan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FormLaporanPembelian.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FormLaporanPembelian.Designer.cs">
+      <DependentUpon>FormLaporanPembelian.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FormLaporanPenjualan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FormLaporanPenjualan.Designer.cs">
+      <DependentUpon>FormLaporanPenjualan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FormPakaian.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FormPakaian.Designer.cs">
+      <DependentUpon>FormPakaian.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FormPakaianAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FormPakaianAdd.Designer.cs">
+      <DependentUpon>FormPakaianAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FormPakaianDelete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FormPakaianDelete.Designer.cs">
+      <DependentUpon>FormPakaianDelete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FormPakaianUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FormPakaianUpdate.Designer.cs">
+      <DependentUpon>FormPakaianUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FormPelanggan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FormPelanggan.Designer.cs">
+      <DependentUpon>FormPelanggan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FormPelangganAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FormPelangganAdd.Designer.cs">
+      <DependentUpon>FormPelangganAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FormPelangganDelete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FormPelangganDelete.Designer.cs">
+      <DependentUpon>FormPelangganDelete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FormPelangganUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FormPelangganUpdate.Designer.cs">
+      <DependentUpon>FormPelangganUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FormPembelian.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FormPembelian.Designer.cs">
+      <DependentUpon>FormPembelian.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FormPembelianAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FormPembelianAdd.Designer.cs">
+      <DependentUpon>FormPembelianAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FormPembelianDelete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FormPembelianDelete.Designer.cs">
+      <DependentUpon>FormPembelianDelete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FormPembelianUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FormPembelianUpdate.Designer.cs">
+      <DependentUpon>FormPembelianUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FormPenjualan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FormPenjualan.Designer.cs">
+      <DependentUpon>FormPenjualan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FormPenjualanAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FormPenjualanAdd.Designer.cs">
+      <DependentUpon>FormPenjualanAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FormPenjualanDelete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FormPenjualanDelete.Designer.cs">
+      <DependentUpon>FormPenjualanDelete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FormPenjualanUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FormPenjualanUpdate.Designer.cs">
+      <DependentUpon>FormPenjualanUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FormSignUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FormSignUp.Designer.cs">
+      <DependentUpon>FormSignUp.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="View\FormSignIn.resx">
+      <DependentUpon>FormSignIn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="View\FormAbout.resx">
+      <DependentUpon>FormAbout.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FormBeranda.resx">
+      <DependentUpon>FormBeranda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FormDistributor.resx">
+      <DependentUpon>FormDistributor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FormDistributorAdd.resx">
+      <DependentUpon>FormDistributorAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FormDistributorDelete.resx">
+      <DependentUpon>FormDistributorDelete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FormDistributorUpdate.resx">
+      <DependentUpon>FormDistributorUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FormKategori.resx">
+      <DependentUpon>FormKategori.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FormKategoriAdd.resx">
+      <DependentUpon>FormKategoriAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FormKategoriDelete.resx">
+      <DependentUpon>FormKategoriDelete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FormKategoriUpdate.resx">
+      <DependentUpon>FormKategoriUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FormLaporan.resx">
+      <DependentUpon>FormLaporan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FormLaporanPembelian.resx">
+      <DependentUpon>FormLaporanPembelian.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FormLaporanPenjualan.resx">
+      <DependentUpon>FormLaporanPenjualan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FormPakaian.resx">
+      <DependentUpon>FormPakaian.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FormPakaianAdd.resx">
+      <DependentUpon>FormPakaianAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FormPakaianDelete.resx">
+      <DependentUpon>FormPakaianDelete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FormPakaianUpdate.resx">
+      <DependentUpon>FormPakaianUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FormPelanggan.resx">
+      <DependentUpon>FormPelanggan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FormPelangganAdd.resx">
+      <DependentUpon>FormPelangganAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FormPelangganDelete.resx">
+      <DependentUpon>FormPelangganDelete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FormPelangganUpdate.resx">
+      <DependentUpon>FormPelangganUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FormPembelian.resx">
+      <DependentUpon>FormPembelian.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FormPembelianAdd.resx">
+      <DependentUpon>FormPembelianAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FormPembelianDelete.resx">
+      <DependentUpon>FormPembelianDelete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FormPembelianUpdate.resx">
+      <DependentUpon>FormPembelianUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FormPenjualan.resx">
+      <DependentUpon>FormPenjualan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FormPenjualanAdd.resx">
+      <DependentUpon>FormPenjualanAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FormPenjualanDelete.resx">
+      <DependentUpon>FormPenjualanDelete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FormPenjualanUpdate.resx">
+      <DependentUpon>FormPenjualanUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FormSignUp.resx">
+      <DependentUpon>FormSignUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Black and White Elegant Initials Monogram Logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-clothes-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-customer-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-supply-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-categorize-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-sale-66.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-purchase-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-report-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-about-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-sale-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Brown Smooth Brush New Arrival Banner Landscape %281%29 %281%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\desain-butik-minimalis-6.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Black and White Elegant Initials Monogram Logo %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\visibility_off_FILL0_wght400_GRAD0_opsz24.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\visibility_off_FILL0_wght400_GRAD0_opsz241.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\visibility_FILL0_wght400_GRAD0_opsz24.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Hitam &amp; Putih Minimalis Promosi Pakaian Wanita Daster Kiriman Instagram.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bac %281%29.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
